@@ -1,0 +1,80 @@
+
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.prolog.mavenProject2.BeanClass;
+
+/**
+ * Servlet implementation class DatabaseServlet
+ */
+public class DatabaseServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	Connection con;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public DatabaseServlet() {
+        super();
+        
+        // TODO Auto-generated constructor stub
+    }
+    
+    public void init(){
+    	
+    	try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    } 
+
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PreparedStatement pmt;
+		int i;
+		BeanClass b=new BeanClass();
+		int id=b.getId();
+		String name=b.getName();
+		String email=b.getEmail();
+		String course=b.getCourse();
+		response.getWriter().println(name);
+		try {
+			 pmt=con.prepareStatement("insert into studentManagementprolog(?,?,?,?)");
+			pmt.setInt(1,id);
+			pmt.setString(2, name);
+			pmt.setString(3, email);
+			pmt.setString(4, course);
+			i=pmt.executeUpdate();
+			response.getWriter().println(i);
+			response.getWriter().println("hello");
+			
+			
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		// TODO Auto-generated method stub
+	}
+
+}

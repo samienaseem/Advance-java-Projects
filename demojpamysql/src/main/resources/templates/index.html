@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Spring JPA with mysql</title>
+	<link rel="stylesheet" type="text/css" href="/css/stylesheet.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/ea43e797cc.js"></script>
+</head>
+<body>
+
+<div id="main-container">
+
+		<div id="main-navigation">
+			<div id="logo-side" class="logo">
+			<div class="one" id="id02" onclick="hide()">
+				<button class="navbar-toggler navbar-dark" type="button">
+                 <span class="navbar-toggler-icon iconn"></span>
+  </button>
+			</div>
+			<div class="two"><h3>Your Logo</h3></div>
+			</div>
+			<div id="search" class="book-search">
+				<form id="search-form" class="book-search-form">
+					<input id="search" class="searchbox" type="search" name="search-query" placeholder="search" autocomplete="on" autocorrect="off">
+					<button  class="search-icon"><i class="fa fa-search"></i></button>
+				</form>
+				
+			</div>
+
+			<div id="account" class="account-right">
+
+				<div class="mobile-view-search" title="click to open search" >
+					<i class="fa fa-search" aria-hidden="true"></i>
+					
+				</div>
+				<div class="users">
+					<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+				</div>
+			</div>
+
+			<div class="category" id="id01"></div>
+
+
+			
+		</div>
+		<div id="main-content">
+			<div class="container-fluid">
+				<div class="row" style="justify-content: space-evenly;">
+					<div class="left-sidebar1"></div>
+					<div class="blogpage1">
+						<div class="container-fluid">
+							<div class="row blogpage">
+									<div class="one1"></div>
+									<div class="one1"></div>
+									<div class="one1"></div>
+									<div class="one1"></div>
+									<div class="one1"></div>
+									<div class="one1"></div>
+									<div class="one1"></div>
+									<div class="one1"></div>
+									<div class="one1"></div>
+									<div class="one1"></div>
+									<div class="one1"></div>
+									<div class="one1"></div>
+									<div class="one1"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+					<!-- <div class="left-sidebar">
+						<div class="category-default ">
+							<div class="category-heading">
+								<h4>Categories</h4>
+							</div>
+							
+						</div>
+					</div>
+					<div class="content">
+						<div class="container-fluid">
+							<div class="row blogpage">
+									<div class="one1"></div>
+									<div class="one1"></div>
+									<div class="one1"></div>
+									<div class="one1"></div>
+									<div class="one1"></div>
+									<div class="one1"></div>
+									<div class="one1"></div>
+									<div class="one1"></div>
+							</div>
+						</div>
+
+					</div> -->
+				</div>
+				
+			
+		<div id="footer"></div>
+		
+	</div>
+
+
+
+	<script type="text/javascript">
+		function hide() {
+
+			var b=document.getElementById('id02');
+
+			var a=document.getElementById('id01');
+			a.style.left="0px";
+			b.style.transform="rotateZ(-180deg)";
+
+			
+
+			// body...
+		}
+		window.onscroll=function(){
+			scrollfunction();
+		}
+		function scrollfunction(){
+			console.log(document.documentElement.scrollTop);
+
+			if (document.documentElement.scrollTop>0) {
+				var a=document.getElementById("main-navigation").style.position="fixed";
+			}
+			else{
+				document.getElementById("main-navigation").style.position="relative";
+			}
+		}
+
+	</script>
+
+</body>
+</html>

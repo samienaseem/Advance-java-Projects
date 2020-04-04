@@ -1,0 +1,50 @@
+package com.prolog.spring11.mvcjdbctemplate1.dao;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+import com.prolog.spring11.mvcjdbctemplate1.model.contact;
+
+public class ContactDdaoTest {
+	private DriverManagerDataSource data;
+	private ContactDdao dd;
+
+	@Test
+	public void testSave() {
+		data=new DriverManagerDataSource();
+		data.setDriverClassName("com.mysql.jdbc.Driver");
+		data.setUrl("jdbc:mysql://localhost:3306/springdb");
+		data.setUsername("root");
+		data.setPassword("");
+		
+		dd=new ContactDaoImpl(data);
+		
+		contact c=new contact("samienaseem", "samar1213134@gmail.com", "Okhla jamia", "9810342102");
+		int res=dd.save(c);
+		assertTrue(res>0);
+		
+	}
+
+	@Test
+	public void testUpdate() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGet() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testDelete() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testList() {
+		fail("Not yet implemented");
+	}
+
+}

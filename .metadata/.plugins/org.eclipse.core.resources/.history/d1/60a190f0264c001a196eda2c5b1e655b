@@ -1,0 +1,5 @@
+package com.prolog.spring1.mvctest.controller;
+
+public class ControllerServlet {
+
+}

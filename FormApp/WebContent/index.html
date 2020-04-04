@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mini project</title>
+</head>
+<style type="text/css">
+	
+	.main{
+		margin: auto;
+		width: 50%;
+	}
+	tr,td{
+		padding: 10px;
+		text-align: center;
+	}
+	table,input{
+		width: 100%;
+	}
+</style>
+<body>
+	<div class="main">
+
+		<form action="FormServlet" method="POST">
+
+			<table border="1">
+				<tr>
+					<td>Name</td>
+					<td><input type="text" name="Name" required></td>
+				</tr>
+
+				<tr>
+					<td>Age :</td>
+					<td><input type="number" name="Age" required></td>
+				</tr>
+
+				<tr>
+					<td>Gender</td>
+					<td><input type="radio" name="gender" value="Male" checked="">Male&nbsp;
+						<input type="radio" name="gender" value="Female" checked="">Female&nbsp;</td>
+				</tr>
+
+				<tr>
+		<td>Qualification :</td>
+<td>
+<select name="qlfy">
+<option value="Engineer">B.Tech</option>
+<option value="Medico">MBBS</option>
+<option value="Arts">B.A</option>
+<option value="Science">B.Sc</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>Courses :</td>
+<td>
+<select name="crs" >
+<option value="java">JAVA</option>
+<option value="DS">Data Structure</option>
+<option value="Hadoop">Hadoop</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>Hobbies :</td>
+<td>
+<input type="checkbox" name="c1"
+
+value="Reading"/>Reading&nbsp&nbsp;
+
+<input type="checkbox" name="c1"
+
+value="Shopping"/>Shopping&nbsp&nbsp;
+
+<input type="checkbox" name="c1"
+
+value="Sleeping"/>Sleeping&nbsp&nbsp;
+
+</td>
+</tr>
+<tr>
+<td>Address :</td>
+<td>
+<textarea name="address" rows="4" cols="20">
+Enter your Address
+</textarea>
+</td>
+</tr>
+<tr>
+
+<td colspan="2">
+<input type="submit" value="Get Details">
+</td>
+</tr>
+				
+			</table>	
+		</form>
+		
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+<bean id="ans1" class="com.prolog.beans.Answers">
+
+<constructor-arg name="id" value="1"/>
+<constructor-arg name="name" value="Java is Programming language"></constructor-arg>
+<constructor-arg name="by" value="Samie"></constructor-arg>
+
+</bean>
+
+<bean id="ans2" class="com.prolog.beans.Answers">
+
+<constructor-arg name="id" value="2"/>
+<constructor-arg name="name" value="Java is object oriented programming language"></constructor-arg>
+<constructor-arg name="by" value="Arif"></constructor-arg>
+
+</bean>
+
+<bean id="ques" class="com.prolog.beans.Questions">
+	<constructor-arg name="id" value="121"></constructor-arg>
+	<constructor-arg name="name" value="What is java "></constructor-arg>
+	<constructor-arg>
+	<list>
+	<ref bean="ans1"/>
+	<ref bean="ans2"/>
+	</list>
+	</constructor-arg>
+
+</bean>
+
+
+</beans>

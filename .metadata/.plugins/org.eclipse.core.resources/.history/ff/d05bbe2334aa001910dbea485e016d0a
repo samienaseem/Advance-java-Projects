@@ -1,0 +1,16 @@
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/test")
+public class controllerServlet extends HttpServlet throws Exception{
+	public void service (HttpServletRequest req,HttpServletResponse rec){
+		
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		String a=req.getParameter("books");
+		pw.print(a);
+	}
+	
+}
